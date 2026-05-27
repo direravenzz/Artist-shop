@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ārtisān Persia — Persian Handmade Marketplace</title>
@@ -318,330 +317,11 @@
             .stats-banner{grid-template-columns:repeat(2,1fr)}
         }
     </style>
-=======
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ārtisān Persia — Persian Handmade Marketplace</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    :root{
-      --gold:#C9A84C;--gold-light:#E8D08A;--gold-dark:#8B6914;--gold-faint:rgba(201,168,76,0.12);
-      --cream:#FAF6EF;--deep:#12090000;--ink:#1A0F00;--warm:#3D2B0E;--muted:#7A6242;
-      --card-bg:#FFFFFF;--border:1px solid rgba(201,168,76,0.25);
-      --shadow:0 8px 40px rgba(26,15,0,0.10);
-      --font-head:'Cinzel',Georgia,serif;
-      --font-body:'Lora',Georgia,serif;
-      --radius:6px;
-    }
-    html{scroll-behavior:smooth}
-    body{font-family:var(--font-body);background:var(--cream);color:var(--ink);overflow-x:hidden;cursor:default}
-
-    /* ── SCROLLBAR ── */
-    ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#FAF6EF}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
-
-    /* ── NAV ── */
-    nav{background:var(--ink);border-bottom:1px solid rgba(201,168,76,0.3);padding:0 3rem;display:flex;align-items:center;justify-content:space-between;height:68px;position:sticky;top:0;z-index:200}
-    .logo{font-family:var(--font-head);font-size:17px;color:var(--gold);letter-spacing:3px;cursor:pointer;text-decoration:none;line-height:1}
-    .logo small{color:rgba(255,255,255,0.4);font-size:9px;display:block;letter-spacing:4px;margin-top:3px;font-family:var(--font-body);font-style:italic;text-transform:uppercase}
-    .nav-links{display:flex;list-style:none;gap:0}
-    .nav-links a{color:rgba(255,255,255,0.6);font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;cursor:pointer;text-decoration:none;font-family:var(--font-body);transition:color .2s;border-bottom:2px solid transparent}
-    .nav-links a:hover,.nav-links a.active{color:var(--gold);border-bottom-color:var(--gold)}
-    .nav-actions{display:flex;gap:10px;align-items:center}
-    .pill{padding:8px 20px;font-size:11px;letter-spacing:1.5px;cursor:pointer;border-radius:2px;font-family:var(--font-head);transition:all .2s;white-space:nowrap}
-    .pill-out{background:transparent;border:1px solid rgba(201,168,76,0.6);color:var(--gold)}
-    .pill-out:hover{background:var(--gold);color:var(--ink)}
-    .pill-fill{background:var(--gold);border:1px solid var(--gold);color:var(--ink)}
-    .pill-fill:hover{background:var(--gold-light)}
-
-    /* ── SECTIONS ── */
-    .page{display:none}.page.active{display:block}
-
-    /* ═══════════════════════ HOME ═══════════════════════ */
-    .hero{position:relative;height:92vh;min-height:560px;overflow:hidden;display:flex;align-items:center}
-    .hero-bg{position:absolute;inset:0;background:url('https://www.arch2o.com/wp-content/uploads/2017/03/Arch2O-the-beautiful-wonders-of-persian-architecture-from-5-cities-in-iran.webp') center/cover no-repeat;filter:brightness(0.35)}
-    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(18,9,0,0.85) 45%,rgba(18,9,0,0.2))}
-    .hero-content{position:relative;z-index:2;padding:0 4rem;max-width:660px}
-    .hero-tag{font-size:10px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:1.2rem;opacity:.85}
-    .hero h1{font-family:var(--font-head);font-size:clamp(34px,5vw,60px);color:#fff;line-height:1.1;margin-bottom:1.5rem;font-weight:600}
-    .hero h1 .accent{color:var(--gold)}
-    .hero p{font-size:16px;color:rgba(255,255,255,0.6);line-height:1.9;font-style:italic;margin-bottom:2.5rem;max-width:480px}
-    .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-    .btn-primary{padding:15px 38px;background:var(--gold);color:var(--ink);border:none;font-family:var(--font-head);font-size:12px;letter-spacing:2px;cursor:pointer;border-radius:2px;text-transform:uppercase;transition:all .25s}
-    .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px)}
-    .btn-secondary{padding:15px 38px;background:transparent;color:var(--gold);border:1px solid rgba(201,168,76,0.5);font-family:var(--font-head);font-size:12px;letter-spacing:2px;cursor:pointer;border-radius:2px;text-transform:uppercase;transition:all .25s}
-    .btn-secondary:hover{border-color:var(--gold);background:var(--gold-faint)}
-    .hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.3);font-size:11px;letter-spacing:3px;text-transform:uppercase;z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px}
-    .hero-scroll::after{content:'';display:block;width:1px;height:40px;background:var(--gold);opacity:.4;animation:scrollPulse 2s infinite}
-    @keyframes scrollPulse{0%,100%{opacity:.2;transform:scaleY(0.5)}50%{opacity:.6;transform:scaleY(1)}}
-    .hero-stats{position:absolute;bottom:2.5rem;right:3rem;z-index:2;display:flex;gap:2rem}
-    .hstat{text-align:right}
-    .hstat .num{font-family:var(--font-head);font-size:26px;color:var(--gold);display:block}
-    .hstat .lbl{font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:2px;text-transform:uppercase}
-
-    /* MARQUEE */
-    .ticker{background:var(--gold);padding:10px 0;overflow:hidden;white-space:nowrap}
-    .ticker-inner{display:inline-flex;gap:0;animation:ticker 28s linear infinite}
-    .ticker span{font-family:var(--font-head);font-size:10px;letter-spacing:3px;color:var(--ink);padding:0 2.5rem;text-transform:uppercase;opacity:.8}
-    .ticker span::after{content:'✦';margin-left:2.5rem;opacity:.5}
-    @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-    /* CATEGORIES */
-    .section-wrap{padding:4rem 3rem}
-    .section-header{margin-bottom:2.5rem}
-    .section-header .eyebrow{font-size:10px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:.6rem}
-    .section-header h2{font-family:var(--font-head);font-size:28px;color:var(--warm);letter-spacing:1px}
-    .section-header p{font-size:14px;color:var(--muted);font-style:italic;margin-top:.4rem}
-
-    .cat-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
-    .cat-card{position:relative;border-radius:var(--radius);overflow:hidden;cursor:pointer;aspect-ratio:3/4;transition:transform .3s}
-    .cat-card:hover{transform:translateY(-4px)}
-    .cat-card:hover .cat-img{transform:scale(1.08)}
-    .cat-img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-    .cat-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(18,9,0,.85),transparent);padding:1.5rem .8rem .8rem;color:#fff;font-family:var(--font-head);font-size:12px;letter-spacing:1.5px;text-align:center}
-    .cat-label small{display:block;font-family:var(--font-body);font-size:10px;color:var(--gold-light);font-style:italic;letter-spacing:1px;margin-top:2px}
-
-    /* FEATURED PRODUCTS */
-    .prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
-    .prod-card{background:var(--card-bg);border:var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:all .3s;box-shadow:0 2px 12px rgba(26,15,0,.04)}
-    .prod-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:rgba(201,168,76,.5)}
-    .prod-img-wrap{position:relative;height:220px;overflow:hidden;background:#F5EDD8}
-    .prod-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-    .prod-card:hover .prod-img-wrap img{transform:scale(1.06)}
-    .prod-badge{position:absolute;top:10px;left:10px;font-size:9px;letter-spacing:1.5px;padding:4px 10px;border-radius:1px;text-transform:uppercase;font-family:var(--font-body)}
-    .badge-new{background:var(--ink);color:var(--gold)}
-    .badge-sale{background:#8B1A1A;color:#fff}
-    .badge-rare{background:var(--gold);color:var(--ink)}
-    .prod-fav{position:absolute;top:10px;right:10px;width:30px;height:30px;background:rgba(255,255,255,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;cursor:pointer;border:none;transition:transform .2s}
-    .prod-fav:hover{transform:scale(1.15)}
-    .prod-body{padding:14px 16px}
-    .prod-body h4{font-family:var(--font-head);font-size:13px;color:var(--warm);margin-bottom:3px;letter-spacing:.5px}
-    .prod-body .by{font-size:11px;color:var(--muted);font-style:italic;margin-bottom:10px}
-    .prod-footer{display:flex;align-items:center;justify-content:space-between}
-    .prod-price{font-size:16px;font-weight:500;color:var(--gold-dark)}
-    .prod-price .orig{font-size:11px;text-decoration:line-through;color:#aaa;margin-left:4px}
-    .btn-cart{font-size:10px;padding:6px 14px;background:var(--ink);color:var(--gold);border:none;border-radius:2px;cursor:pointer;font-family:var(--font-head);letter-spacing:1px;transition:all .2s}
-    .btn-cart:hover{background:var(--warm)}
-
-    /* WHY US STRIP */
-    .why-strip{background:var(--ink);padding:3.5rem 3rem;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
-    .why-item{text-align:center}
-    .why-icon{font-size:32px;margin-bottom:.8rem;display:block}
-    .why-item h3{font-family:var(--font-head);font-size:13px;color:var(--gold);letter-spacing:1.5px;margin-bottom:.5rem}
-    .why-item p{font-size:12px;color:rgba(255,255,255,.45);line-height:1.7;font-style:italic}
-
-    /* ARTISAN SPOTLIGHT */
-    .spotlight{background:var(--warm);padding:4rem 3rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-    .spot-img{position:relative}
-    .spot-img img{width:100%;border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover}
-    .spot-img::before{content:'';position:absolute;top:-12px;left:-12px;right:12px;bottom:12px;border:1px solid rgba(201,168,76,.4);border-radius:var(--radius);z-index:0}
-    .spot-img img{position:relative;z-index:1}
-    .spot-text{color:#fff}
-    .spot-text .eyebrow{font-size:10px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:1rem;opacity:.8}
-    .spot-text h2{font-family:var(--font-head);font-size:32px;line-height:1.2;margin-bottom:1rem;letter-spacing:1px}
-    .spot-text p{font-size:14px;color:rgba(255,255,255,.65);line-height:1.9;font-style:italic;margin-bottom:1.5rem}
-    .spot-detail{display:flex;gap:1.5rem;margin-bottom:2rem}
-    .spot-tag{font-size:11px;color:var(--gold-light);border:1px solid rgba(201,168,76,.35);padding:5px 14px;border-radius:2px;font-style:italic}
-
-    /* TESTIMONIALS */
-    .testi-section{padding:4rem 3rem;background:#FDF9F2}
-    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:2.5rem}
-    .testi-card{background:#fff;border:var(--border);border-radius:var(--radius);padding:1.8rem;position:relative}
-    .testi-card::before{content:'"';font-family:var(--font-head);font-size:60px;color:var(--gold);opacity:.15;position:absolute;top:10px;left:16px;line-height:1}
-    .testi-stars{color:var(--gold);font-size:13px;margin-bottom:1rem}
-    .testi-text{font-size:13px;line-height:1.8;color:#555;font-style:italic;margin-bottom:1.2rem}
-    .testi-author{display:flex;align-items:center;gap:10px}
-    .testi-avatar{width:36px;height:36px;border-radius:50%;object-fit:cover}
-    .testi-name{font-size:12px;font-family:var(--font-head);color:var(--warm);letter-spacing:.5px}
-    .testi-loc{font-size:10px;color:var(--muted);font-style:italic}
-
-    /* NEWSLETTER */
-    .newsletter{background:var(--ink);padding:4rem 3rem;text-align:center;border-top:1px solid rgba(201,168,76,.2)}
-    .newsletter h2{font-family:var(--font-head);font-size:26px;color:var(--gold);letter-spacing:2px;margin-bottom:.6rem}
-    .newsletter p{font-size:14px;color:rgba(255,255,255,.5);font-style:italic;margin-bottom:2rem}
-    .nl-form{display:flex;gap:0;max-width:440px;margin:0 auto}
-    .nl-form input{flex:1;padding:13px 18px;background:rgba(255,255,255,.07);border:1px solid rgba(201,168,76,.3);border-right:none;color:#fff;font-family:var(--font-body);font-size:13px;outline:none}
-    .nl-form input::placeholder{color:rgba(255,255,255,.3)}
-    .nl-form button{padding:13px 24px;background:var(--gold);color:var(--ink);border:none;font-family:var(--font-head);font-size:11px;letter-spacing:2px;cursor:pointer}
-    .nl-form button:hover{background:var(--gold-light)}
-
-    /* FOOTER */
-    footer{background:#0D0700;padding:3rem 3rem 1.5rem;border-top:1px solid rgba(201,168,76,.15)}
-    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
-    .footer-brand h3{font-family:var(--font-head);font-size:16px;color:var(--gold);letter-spacing:2px;margin-bottom:.5rem}
-    .footer-brand p{font-size:12px;color:rgba(255,255,255,.35);line-height:1.8;font-style:italic;max-width:240px;margin-top:.5rem}
-    .footer-col h4{font-family:var(--font-head);font-size:11px;color:var(--gold);letter-spacing:2px;margin-bottom:1rem;text-transform:uppercase}
-    .footer-col ul{list-style:none}
-    .footer-col li{margin-bottom:.5rem}
-    .footer-col a{font-size:12px;color:rgba(255,255,255,.4);text-decoration:none;cursor:pointer;transition:color .2s;font-style:italic}
-    .footer-col a:hover{color:var(--gold)}
-    .footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:1.2rem;display:flex;justify-content:space-between;align-items:center}
-    .footer-bottom p{font-size:11px;color:rgba(255,255,255,.25);font-style:italic}
-    .socials{display:flex;gap:12px}
-    .social-btn{width:30px;height:30px;border:1px solid rgba(201,168,76,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;cursor:pointer;color:rgba(255,255,255,.3);transition:all .2s;text-decoration:none}
-    .social-btn:hover{border-color:var(--gold);color:var(--gold)}
-
-    /* ═══════════════════════ PRODUCTS PAGE ═══════════════════════ */
-    .page-hero{position:relative;height:260px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
-    .page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.28)}
-    .page-hero-content{position:relative;z-index:1}
-    .page-hero h2{font-family:var(--font-head);font-size:38px;color:var(--gold);letter-spacing:4px}
-    .page-hero p{font-size:13px;color:rgba(255,255,255,.5);font-style:italic;margin-top:.5rem;letter-spacing:1px}
-
-    .products-layout{display:grid;grid-template-columns:220px 1fr;gap:2rem;padding:2.5rem 3rem}
-    .sidebar h3{font-family:var(--font-head);font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:var(--border)}
-    .sidebar{padding-top:.5rem}
-    .filter-group{margin-bottom:1.8rem}
-    .filter-group label{display:block;font-size:12px;letter-spacing:1.5px;color:var(--warm);text-transform:uppercase;font-family:var(--font-head);margin-bottom:.7rem}
-    .filter-check{display:flex;align-items:center;gap:8px;margin-bottom:.4rem;cursor:pointer}
-    .filter-check input{accent-color:var(--gold-dark)}
-    .filter-check span{font-size:13px;color:#666;font-style:italic}
-    .price-range{display:flex;gap:8px;align-items:center}
-    .price-range input{width:70px;padding:6px 8px;border:var(--border);font-size:12px;font-family:var(--font-body);border-radius:2px;background:#fff}
-    .sort-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
-    .sort-bar span{font-size:12px;color:var(--muted);font-style:italic}
-    .sort-select{padding:7px 12px;border:var(--border);font-size:12px;font-family:var(--font-body);border-radius:2px;background:#fff;color:var(--warm);cursor:pointer}
-    .apply-btn{width:100%;padding:10px;background:var(--ink);color:var(--gold);border:none;font-family:var(--font-head);font-size:11px;letter-spacing:2px;cursor:pointer;border-radius:2px;margin-top:.5rem;transition:background .2s}
-    .apply-btn:hover{background:var(--warm)}
-
-    /* ═══════════════════════ AUCTION PAGE ═══════════════════════ */
-    .auction-hero-img{filter:brightness(.22);background:url('https://www.arch2o.com/wp-content/uploads/2017/03/Arch2O-the-beautiful-wonders-of-persian-architecture-from-5-cities-in-iran.webp') center/cover}
-    .auction-layout{padding:2.5rem 3rem}
-    .live-header{display:flex;align-items:center;gap:12px;margin-bottom:2rem}
-    .live-dot{width:10px;height:10px;background:#e74c3c;border-radius:50%;animation:blink 1.2s infinite}
-    @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-    .live-header h3{font-family:var(--font-head);font-size:14px;color:#e74c3c;letter-spacing:2px;text-transform:uppercase}
-    .auction-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
-    .auc-card{background:var(--card-bg);border:var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:all .3s}
-    .auc-card:hover{transform:translateY(-4px);border-color:rgba(201,168,76,.5)}
-    .auc-img{position:relative;height:240px;overflow:hidden}
-    .auc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-    .auc-card:hover .auc-img img{transform:scale(1.05)}
-    .auc-live{position:absolute;top:12px;left:12px;background:#e74c3c;color:#fff;font-size:9px;padding:4px 10px;border-radius:1px;letter-spacing:1.5px;font-family:var(--font-head);display:flex;align-items:center;gap:5px}
-    .auc-cert{position:absolute;bottom:12px;right:12px;background:rgba(18,9,0,.7);color:var(--gold);font-size:9px;padding:4px 10px;border-radius:1px;letter-spacing:1px;font-family:var(--font-body);font-style:italic}
-    .auc-body{padding:16px 18px}
-    .auc-body h4{font-family:var(--font-head);font-size:15px;color:var(--warm);margin-bottom:3px;letter-spacing:.5px}
-    .auc-body .origin{font-size:11px;color:var(--muted);font-style:italic;margin-bottom:12px}
-    .auc-bids{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
-    .bid-stat label{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#aaa;display:block;margin-bottom:2px}
-    .bid-stat span{font-family:var(--font-head);font-size:20px;color:var(--gold-dark)}
-    .bid-stat .count{font-size:13px;color:var(--muted);font-style:italic}
-    .auc-timer{background:var(--gold-faint);border:1px solid rgba(201,168,76,.2);border-radius:2px;padding:8px 12px;display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .timer-label{font-size:10px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase}
-    .timer-val{font-family:var(--font-head);font-size:14px;color:var(--gold-dark);letter-spacing:2px}
-    .btn-bid{width:100%;padding:12px;background:var(--ink);color:var(--gold);border:none;font-family:var(--font-head);font-size:11px;letter-spacing:2.5px;cursor:pointer;border-radius:2px;text-transform:uppercase;transition:all .2s}
-    .btn-bid:hover{background:var(--warm)}
-    .upcoming-header{margin:3rem 0 1.5rem;padding-bottom:.8rem;border-bottom:var(--border)}
-    .upcoming-header h3{font-family:var(--font-head);font-size:14px;color:var(--warm);letter-spacing:2px;text-transform:uppercase}
-
-    /* ═══════════════════════ ABOUT PAGE ═══════════════════════ */
-    .about-hero-img{filter:brightness(.22);background:url('https://saffronandmore.com.au/wp-content/uploads/2019/12/Screen-Shot-2019-12-12-at-1.46.19-PM.jpg') center/cover}
-    .about-body{max-width:1080px;margin:0 auto}
-    .stats-banner{display:grid;grid-template-columns:repeat(4,1fr);background:var(--ink);border-bottom:1px solid rgba(201,168,76,.2)}
-    .stat-item{padding:2.2rem;text-align:center;border-right:1px solid rgba(201,168,76,.1)}
-    .stat-item:last-child{border-right:none}
-    .stat-item .num{font-family:var(--font-head);font-size:36px;color:var(--gold);display:block;line-height:1}
-    .stat-item .lbl{font-size:10px;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase;margin-top:.4rem}
-    .mission{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
-    .mission-img{height:480px;overflow:hidden}
-    .mission-img img{width:100%;height:100%;object-fit:cover}
-    .mission-text{padding:4rem;background:var(--warm);display:flex;flex-direction:column;justify-content:center}
-    .mission-text .eyebrow{font-size:10px;letter-spacing:4px;color:var(--gold-light);text-transform:uppercase;margin-bottom:1rem;opacity:.8}
-    .mission-text h2{font-family:var(--font-head);font-size:30px;color:#fff;line-height:1.25;margin-bottom:1.5rem;letter-spacing:1px}
-    .mission-text p{font-size:14px;color:rgba(255,255,255,.65);line-height:1.9;font-style:italic;margin-bottom:1rem}
-    .team-section{padding:4rem 3rem;background:#FDF9F2}
-    .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:2.5rem}
-    .team-card{background:#fff;border:var(--border);border-radius:var(--radius);overflow:hidden;text-align:center;transition:all .3s}
-    .team-card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
-    .team-img{height:220px;overflow:hidden}
-    .team-img img{width:100%;height:100%;object-fit:cover;object-position:top;filter:grayscale(20%);transition:all .4s}
-    .team-card:hover .team-img img{filter:grayscale(0);transform:scale(1.04)}
-    .team-info{padding:1.2rem 1rem 1.5rem}
-    .team-info h4{font-family:var(--font-head);font-size:14px;color:var(--warm);letter-spacing:.5px;margin-bottom:3px}
-    .team-info .role{font-size:11px;color:var(--gold-dark);font-style:italic;margin-bottom:.5rem}
-    .team-info p{font-size:12px;color:#888;line-height:1.6;font-style:italic}
-    .cities-section{padding:4rem 3rem}
-    .cities-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:2.5rem}
-    .city-card{position:relative;border-radius:var(--radius);overflow:hidden;cursor:pointer;aspect-ratio:3/4;transition:transform .3s}
-    .city-card:hover{transform:scale(1.02)}
-    .city-card img{width:100%;height:100%;object-fit:cover;filter:brightness(.6);transition:filter .3s}
-    .city-card:hover img{filter:brightness(.45)}
-    .city-card .city-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:1.5rem;text-align:center}
-    .city-label h4{font-family:var(--font-head);font-size:15px;color:#fff;letter-spacing:1.5px;margin-bottom:3px}
-    .city-label span{font-size:10px;color:var(--gold-light);font-style:italic;letter-spacing:1px}
-    .press{padding:3rem;background:var(--ink);display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:center}
-    .press-item{text-align:center;padding:1.5rem;border-right:1px solid rgba(255,255,255,.06);opacity:.3;transition:opacity .3s;cursor:default}
-    .press-item:last-child{border-right:none}
-    .press-item:hover{opacity:.6}
-    .press-item p{font-family:var(--font-head);font-size:16px;color:#fff;letter-spacing:2px}
-    .press-item small{font-size:9px;color:rgba(255,255,255,.4);letter-spacing:2px;display:block;margin-top:2px}
-
-    /* ═══════════════════════ MODAL ═══════════════════════ */
-    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:300;display:none;align-items:center;justify-content:center;backdrop-filter:blur(3px)}
-    .overlay.open{display:flex}
-    .modal{background:var(--cream);border:1px solid rgba(201,168,76,.3);border-radius:var(--radius);width:100%;max-width:460px;overflow:hidden;position:relative;animation:modalIn .3s ease}
-    @keyframes modalIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-    .modal-img{height:140px;background:url('https://www.homestratosphere.com/wp-content/uploads/2022/07/iran-architecture.jpg') center/cover;position:relative}
-    .modal-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(18,9,0,.4),rgba(18,9,0,.75))}
-    .modal-img-text{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1rem}
-    .modal-img-text h3{font-family:var(--font-head);font-size:22px;color:var(--gold);letter-spacing:2px}
-    .modal-img-text p{font-size:11px;color:rgba(255,255,255,.6);font-style:italic;margin-top:4px;letter-spacing:1px}
-    .modal-close{position:absolute;top:12px;right:14px;background:rgba(0,0,0,.35);border:none;color:#fff;width:28px;height:28px;border-radius:50%;font-size:14px;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center}
-    .modal-body{padding:2rem}
-    .role-tabs{display:flex;background:#F0E8D8;border-radius:3px;padding:3px;margin-bottom:1.6rem;gap:3px}
-    .role-tab{flex:1;padding:9px;font-size:11px;border:none;background:transparent;border-radius:2px;cursor:pointer;font-family:var(--font-head);color:#999;transition:all .2s;letter-spacing:1px}
-    .role-tab.active{background:var(--ink);color:var(--gold)}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .fg{margin-bottom:13px}
-    .fg label{display:block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:5px;font-family:var(--font-head)}
-    .fg input,.fg select{width:100%;padding:10px 13px;border:1px solid #E0D5C0;border-radius:2px;font-size:13px;font-family:var(--font-body);background:#fff;color:var(--ink);outline:none;transition:border .2s}
-    .fg input:focus,.fg select:focus{border-color:var(--gold)}
-    .artist-fields{display:none}.artist-fields.show{display:block}
-    .form-divider{text-align:center;font-size:11px;color:#bbb;margin:10px 0;position:relative}
-    .form-divider::before,.form-divider::after{content:'';position:absolute;top:50%;width:42%;height:1px;background:#E8DFD0}
-    .form-divider::before{left:0}.form-divider::after{right:0}
-    .btn-form{width:100%;padding:13px;background:var(--ink);color:var(--gold);border:none;font-family:var(--font-head);font-size:12px;letter-spacing:2.5px;cursor:pointer;border-radius:2px;margin-top:6px;transition:background .2s}
-    .btn-form:hover{background:var(--warm)}
-    .modal-switch{text-align:center;margin-top:12px;font-size:12px;color:#999}
-    .modal-switch a{color:var(--gold-dark);cursor:pointer;text-decoration:underline}
-    .social-login{display:flex;gap:8px;margin-bottom:1rem}
-    .soc-btn{flex:1;padding:9px;background:#fff;border:1px solid #E0D5C0;border-radius:2px;font-size:11px;font-family:var(--font-body);cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px;color:#555}
-    .soc-btn:hover{border-color:var(--gold);color:var(--warm)}
-
-    /* ═══════════════════════ CART TOAST ═══════════════════════ */
-    .toast{position:fixed;bottom:2rem;right:2rem;background:var(--ink);color:var(--gold);padding:12px 20px;border-radius:3px;font-family:var(--font-head);font-size:12px;letter-spacing:1px;border-left:3px solid var(--gold);z-index:400;transform:translateY(80px);opacity:0;transition:all .4s}
-    .toast.show{transform:translateY(0);opacity:1}
-
-    /* ═══════════════════════ CART BADGE ═══════════════════════ */
-    .cart-wrap{position:relative;cursor:pointer}
-    .cart-badge{position:absolute;top:-5px;right:-7px;background:var(--gold);color:var(--ink);font-size:9px;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-head)}
-
-    /* ═══════════════════════ RESPONSIVE ═══════════════════════ */
-    @media(max-width:900px){
-      .cat-grid{grid-template-columns:repeat(3,1fr)}
-      .why-strip{grid-template-columns:repeat(2,1fr)}
-      .spotlight,.mission{grid-template-columns:1fr}
-      .mission-img{height:300px}
-      .cities-grid{grid-template-columns:repeat(2,1fr)}
-      .press{grid-template-columns:repeat(3,1fr)}
-      nav{padding:0 1.2rem}
-      .section-wrap,.products-layout,.auction-layout{padding:2rem 1.2rem}
-      .hero-content{padding:0 1.5rem}
-      .hero-stats{display:none}
-      .footer-grid{grid-template-columns:1fr 1fr}
-      .products-layout{grid-template-columns:1fr}
-      .testi-grid,.team-grid{grid-template-columns:1fr}
-      .stats-banner{grid-template-columns:repeat(2,1fr)}
-    }
-  </style>
->>>>>>> 5466f090e4f87e8f68b4ad7cb73cbc63603346bd
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-<<<<<<< HEAD
     <a class="logo" href="#" onclick="show('home')">ĀRTISĀN PERSIA<small>Persian Handcraft Marketplace</small></a>
     <ul class="nav-links">
         <li><a href="#" class="active" id="nav-home" onclick="show('home')">Home</a></li>
@@ -657,29 +337,11 @@
         <button class="pill pill-out" onclick="openModal('artist')">Sell as Artist</button>
         <button class="pill pill-fill" onclick="openModal('buyer')">Sign In / Join</button>
     </div>
-=======
-  <a class="logo" href="#" onclick="show('home')">ĀRTISĀN PERSIA<small>Persian Handcraft Marketplace</small></a>
-  <ul class="nav-links">
-    <li><a href="#" class="active" id="nav-home" onclick="show('home')">Home</a></li>
-    <li><a href="#" id="nav-products" onclick="show('products')">Products</a></li>
-    <li><a href="#" id="nav-auction" onclick="show('auction')">Live Auction</a></li>
-    <li><a href="#" id="nav-about" onclick="show('about')">About Us</a></li>
-  </ul>
-  <div class="nav-actions">
-    <div class="cart-wrap" title="Shopping Cart">
-      <span style="font-size:18px;color:rgba(255,255,255,0.5);cursor:pointer" onclick="openModal('buyer')">🛒</span>
-      <span class="cart-badge" id="cart-count">0</span>
-    </div>
-    <button class="pill pill-out" onclick="openModal('artist')">Sell as Artist</button>
-    <button class="pill pill-fill" onclick="openModal('buyer')">Sign In / Join</button>
-  </div>
->>>>>>> 5466f090e4f87e8f68b4ad7cb73cbc63603346bd
 </nav>
 
 <!-- ══════════════ HOME ══════════════ -->
 <div class="page active" id="pg-home">
 
-<<<<<<< HEAD
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
@@ -865,199 +527,11 @@
             <p style="font-style:italic;color:rgba(255,255,255,.2)">Privacy Policy · Terms of Service</p>
         </div>
     </footer>
-=======
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-tag">Authentic · Handcrafted · Timeless</div>
-      <h1>The Soul of Persia<br>In Every <span class="accent">Stitch & Stroke</span></h1>
-      <p>Discover rare Persian handmade treasures — rugs, ceramics, miniatures, jewelry — crafted by master artisans and shipped to your door, worldwide.</p>
-      <div class="hero-btns">
-        <button class="btn-primary" onclick="show('products')">Explore Collection</button>
-        <button class="btn-secondary" onclick="show('auction')">Live Auctions</button>
-      </div>
-    </div>
-    <div class="hero-scroll">Scroll</div>
-    <div class="hero-stats">
-      <div class="hstat"><span class="num">340+</span><span class="lbl">Verified Artisans</span></div>
-      <div class="hstat"><span class="num">68</span><span class="lbl">Countries Served</span></div>
-      <div class="hstat"><span class="num">2,400+</span><span class="lbl">Handmade Pieces</span></div>
-    </div>
-  </section>
-
-  <div class="ticker">
-    <div class="ticker-inner">
-      <span>Free Worldwide Shipping on Orders over $300</span>
-      <span>Certificate of Authenticity with Every Purchase</span>
-      <span>340+ Verified Persian Artisans</span>
-      <span>Secure International Payments</span>
-      <span>30-Day Returns Guaranteed</span>
-      <span>Free Worldwide Shipping on Orders over $300</span>
-      <span>Certificate of Authenticity with Every Purchase</span>
-      <span>340+ Verified Persian Artisans</span>
-      <span>Secure International Payments</span>
-      <span>30-Day Returns Guaranteed</span>
-    </div>
-  </div>
-
-  <div class="section-wrap">
-    <div class="section-header">
-      <div class="eyebrow">Browse by Craft</div>
-      <h2>Explore the Categories</h2>
-      <p>Each category carries centuries of Persian artisan tradition</p>
-    </div>
-    <div class="cat-grid">
-      <div class="cat-card" onclick="show('products')">
-        <img class="cat-img" src="https://sanaiedastie.com/wp-content/uploads/2025/08/Untitled-5_11zon-7.webp" alt="Ceramics" loading="lazy">
-        <div class="cat-label">Ceramics<small>Hand-painted pottery</small></div>
-      </div>
-      <div class="cat-card" onclick="show('products')">
-        <img class="cat-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5NZp4GGyxu0NG2gB-4lmfRnFC8y3KB4N9MQ&s" alt="Rugs" loading="lazy">
-        <div class="cat-label">Rugs & Kilims<small>Hand-knotted tradition</small></div>
-      </div>
-      <div class="cat-card" onclick="show('products')">
-        <img class="cat-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Yusef_Zuleykha.jpg/500px-Yusef_Zuleykha.jpg" alt="Miniatures" loading="lazy">
-        <div class="cat-label">Miniatures<small>Persian fine art</small></div>
-      </div>
-      <div class="cat-card" onclick="show('products')">
-        <img class="cat-img" src="https://media.tehrantimes.com/d/t/2022/02/05/4/4051351.jpg" alt="Jewelry" loading="lazy">
-        <div class="cat-label">Jewelry<small>Silver & turquoise</small></div>
-      </div>
-      <div class="cat-card" onclick="show('products')">
-        <img class="cat-img" src="https://api2.kojaro.com/media/2023-5-7f69fb39-f1a0-4ffb-b29d-9f2e2ef26886-67c46114c1067c5ba76845e1?w=1200&q=80" alt="Marquetry" loading="lazy">
-        <div class="cat-label">Marquetry<small>Khatam inlay work</small></div>
-      </div>
-      <div class="cat-card" onclick="show('products')">
-        <img class="cat-img" src="https://images.stockcake.com/public/b/1/8/b188d554-173d-421c-b800-25320b46d961_large/persian-textile-artistry-stockcake.jpg" alt="Textiles" loading="lazy">
-        <div class="cat-label">Textiles<small>Embroidered silk</small></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-wrap" style="background:#FDF9F2;padding-top:3rem;padding-bottom:3rem">
-    <div class="section-header">
-      <div class="eyebrow">Curated Selection</div>
-      <h2>Featured Products</h2>
-      <p>Handpicked pieces from our most celebrated artisans</p>
-    </div>
-    <div class="prod-grid" id="home-products"></div>
-    <div style="text-align:center;margin-top:2.5rem">
-      <button class="btn-secondary" onclick="show('products')" style="color:var(--warm);border-color:rgba(61,43,14,.3)">View All 2,400+ Products →</button>
-    </div>
-  </div>
-
-  <div class="why-strip">
-    <div class="why-item"><span class="why-icon">🛡️</span><h3>100% Authentic</h3><p>Every item verified and certified directly from the artisan's workshop.</p></div>
-    <div class="why-item"><span class="why-icon">✈️</span><h3>Ships Worldwide</h3><p>Insured shipping to 68+ countries with full customs documentation.</p></div>
-    <div class="why-item"><span class="why-icon">🤝</span><h3>Fair Trade</h3><p>Artisans keep 85% of every sale. No middlemen. Direct income support.</p></div>
-    <div class="why-item"><span class="why-icon">🔁</span><h3>30-Day Returns</h3><p>Not happy? Return any item within 30 days, no questions asked.</p></div>
-  </div>
-
-  <div class="spotlight">
-    <div class="spot-img">
-      <img src="https://mygene.ir/wp-content/uploads/2026/02/%D8%A7%D9%82%D9%88%D8%A7%D9%85-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%DA%98%D9%86%D8%AA%DB%8C%DA%A9-%D8%AA%D8%A8%D8%A7%D8%B1%D8%B4%D9%86%D8%A7%D8%B3%DB%8C-1024x683.png" alt="Persian artisan at work">
-    </div>
-    <div class="spot-text">
-      <div class="eyebrow">Artisan Spotlight</div>
-      <h2>Maryam Karimi<br>Master of Isfahan Blue</h2>
-      <p>For over 30 years, Maryam has painted the intricate floral motifs of Isfahan's famous blue-and-white ceramics in her family workshop on the banks of the Zayandeh River. Each piece takes weeks to complete — sketched freehand, fired three times, and glazed with mineral pigments unchanged since the Safavid era.</p>
-      <div class="spot-detail">
-        <span class="spot-tag">Isfahan, Iran</span>
-        <span class="spot-tag">Ceramics & Enamel</span>
-        <span class="spot-tag">30+ Years</span>
-      </div>
-      <button class="btn-secondary" onclick="show('products')" style="color:var(--gold-light);border-color:rgba(201,168,76,.4)">Shop Maryam's Collection</button>
-    </div>
-  </div>
-
-  <div class="testi-section section-wrap">
-    <div class="section-header">
-      <div class="eyebrow">Customer Reviews</div>
-      <h2>Trusted by Collectors Worldwide</h2>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">The Isfahan vase I ordered arrived perfectly packed with a hand-written note from the artisan. The quality is extraordinary — this is a treasure I will pass to my children.</div>
-        <div class="testi-author">
-          <img class="testi-avatar" src="https://images.stockcake.com/public/a/2/b/a2b35823-5682-48fc-8137-ecbe93308b2e_medium/noble-persian-portrait-stockcake.jpg" alt="Sophie">
-          <div><div class="testi-name">Sophie Laurent</div><div class="testi-loc">Paris, France</div></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">I've collected Persian rugs for 20 years. The Tabriz kilim I purchased here is museum quality — the knotting density, the natural dyes. Completely authentic. Highly recommend.</div>
-        <div class="testi-author">
-          <img class="testi-avatar" src="https://images.stockcake.com/public/6/6/b/66b9e5cc-6b40-4a49-83a2-b0e6de97bd0c_large/noble-persian-portrait-stockcake.jpg" alt="James">
-          <div><div class="testi-name">James Whitmore</div><div class="testi-loc">London, UK</div></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">As an interior designer, I have sourced Persian crafts from many places. Ārtisān Persia is by far the most reliable — the pieces are genuine, the artisans are real, and the service is impeccable.</div>
-        <div class="testi-author">
-          <img class="testi-avatar" src="https://images.stockcake.com/public/a/2/b/a2b35823-5682-48fc-8137-ecbe93308b2e_large/noble-persian-portrait-stockcake.jpg" alt="Aiko">
-          <div><div class="testi-name">Aiko Tanaka</div><div class="testi-loc">Tokyo, Japan</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="newsletter">
-    <h2>Join the Inner Circle</h2>
-    <p>Be first to know about new artisans, exclusive drops, and live auction openings.</p>
-    <div class="nl-form">
-      <input type="email" placeholder="Your email address...">
-      <button onclick="toast('You\'re subscribed! Welcome to the inner circle.')">Subscribe</button>
-    </div>
-  </div>
-
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <h3>ĀRTISĀN PERSIA</h3>
-        <p>Connecting master Persian craftspeople with collectors and admirers around the world since 2024.</p>
-        <div class="socials" style="margin-top:1rem">
-          <a class="social-btn" href="#">𝕏</a>
-          <a class="social-btn" href="#">in</a>
-          <a class="social-btn" href="#">f</a>
-          <a class="social-btn" href="#">▶</a>
-        </div>
-      </div>
-      <div class="footer-col"><h4>Explore</h4><ul>
-        <li><a onclick="show('products')">All Products</a></li>
-        <li><a onclick="show('auction')">Live Auctions</a></li>
-        <li><a onclick="show('products')">New Arrivals</a></li>
-        <li><a onclick="show('products')">Best Sellers</a></li>
-        <li><a onclick="show('about')">Artisan Stories</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>Support</h4><ul>
-        <li><a href="#">Shipping Info</a></li>
-        <li><a href="#">Returns Policy</a></li>
-        <li><a href="#">Authenticity</a></li>
-        <li><a href="#">Contact Us</a></li>
-        <li><a href="#">FAQ</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>Sell with Us</h4><ul>
-        <li><a onclick="openModal('artist')">Artist Registration</a></li>
-        <li><a href="#">Seller Guidelines</a></li>
-        <li><a href="#">Commission Rates</a></li>
-        <li><a href="#">Artisan Stories</a></li>
-      </ul></div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 Ārtisān Persia. All rights reserved. Made with care for Persian culture.</p>
-      <p style="font-style:italic;color:rgba(255,255,255,.2)">Privacy Policy · Terms of Service</p>
-    </div>
-  </footer>
->>>>>>> 5466f090e4f87e8f68b4ad7cb73cbc63603346bd
 
 </div>
 
 <!-- ══════════════ PRODUCTS ══════════════ -->
 <div class="page" id="pg-products">
-<<<<<<< HEAD
     <div class="page-hero">
         <img src="https://purson.ir/Media/Image/1403/02/03/638493993332547499.jpg" alt="Products">
         <div class="page-hero-content">
@@ -1112,67 +586,10 @@
             <div class="prod-grid" id="all-products"></div>
         </div>
     </div>
-=======
-  <div class="page-hero">
-    <img src="https://purson.ir/Media/Image/1403/02/03/638493993332547499.jpg" alt="Products">
-    <div class="page-hero-content">
-      <h2>The Collection</h2>
-      <p>Authentic handmade goods from verified Persian artisans</p>
-    </div>
-  </div>
-  <div class="products-layout">
-    <aside class="sidebar">
-      <h3>Filter</h3>
-      <div class="filter-group">
-        <label>Category</label>
-        <div class="filter-check"><input type="checkbox" checked><span>Ceramics & Pottery</span></div>
-        <div class="filter-check"><input type="checkbox" checked><span>Rugs & Kilims</span></div>
-        <div class="filter-check"><input type="checkbox" checked><span>Persian Miniatures</span></div>
-        <div class="filter-check"><input type="checkbox" checked><span>Jewelry</span></div>
-        <div class="filter-check"><input type="checkbox" checked><span>Marquetry / Khatam</span></div>
-        <div class="filter-check"><input type="checkbox" checked><span>Textiles & Silk</span></div>
-        <div class="filter-check"><input type="checkbox" checked><span>Calligraphy</span></div>
-      </div>
-      <div class="filter-group">
-        <label>Price Range (USD)</label>
-        <div class="price-range">
-          <input type="number" placeholder="$50" value="50">
-          <span style="color:#aaa;font-size:12px">—</span>
-          <input type="number" placeholder="$5000" value="5000">
-        </div>
-      </div>
-      <div class="filter-group">
-        <label>Origin City</label>
-        <div class="filter-check"><input type="checkbox" checked><span>Isfahan</span></div>
-        <div class="filter-check"><input type="checkbox" checked><span>Tabriz</span></div>
-        <div class="filter-check"><input type="checkbox" checked><span>Shiraz</span></div>
-        <div class="filter-check"><input type="checkbox" checked><span>Tehran</span></div>
-        <div class="filter-check"><input type="checkbox"><span>Kashan</span></div>
-        <div class="filter-check"><input type="checkbox"><span>Mashhad</span></div>
-      </div>
-      <div class="filter-group">
-        <label>Material</label>
-        <div class="filter-check"><input type="checkbox" checked><span>Handwoven Wool</span></div>
-        <div class="filter-check"><input type="checkbox" checked><span>Sterling Silver</span></div>
-        <div class="filter-check"><input type="checkbox" checked><span>Natural Clay</span></div>
-        <div class="filter-check"><input type="checkbox" checked><span>Pure Silk</span></div>
-      </div>
-      <button class="apply-btn">Apply Filters</button>
-    </aside>
-    <div>
-      <div class="sort-bar">
-        <span id="product-count">Showing 12 of 2,412 products</span>
-        <select class="sort-select"><option>Sort: Featured</option><option>Price: Low to High</option><option>Price: High to Low</option><option>Newest First</option><option>Most Popular</option></select>
-      </div>
-      <div class="prod-grid" id="all-products"></div>
-    </div>
-  </div>
->>>>>>> 5466f090e4f87e8f68b4ad7cb73cbc63603346bd
 </div>
 
 <!-- ══════════════ AUCTION ══════════════ -->
 <div class="page" id="pg-auction">
-<<<<<<< HEAD
     <div class="page-hero">
         <div class="auction-hero-img" style="position:absolute;inset:0"></div>
         <div class="page-hero-content">
@@ -1189,29 +606,10 @@
         <div class="upcoming-header"><h3>Upcoming Auctions</h3></div>
         <div class="auction-grid" id="upcoming-auctions"></div>
     </div>
-=======
-  <div class="page-hero">
-    <div class="auction-hero-img" style="position:absolute;inset:0"></div>
-    <div class="page-hero-content">
-      <h2>Live Auction</h2>
-      <p>Bid on rare & one-of-a-kind Persian masterpieces</p>
-    </div>
-  </div>
-  <div class="auction-layout">
-    <div class="live-header">
-      <div class="live-dot"></div>
-      <h3>Live Now — 4 Active Auctions</h3>
-    </div>
-    <div class="auction-grid" id="live-auctions"></div>
-    <div class="upcoming-header"><h3>Upcoming Auctions</h3></div>
-    <div class="auction-grid" id="upcoming-auctions"></div>
-  </div>
->>>>>>> 5466f090e4f87e8f68b4ad7cb73cbc63603346bd
 </div>
 
 <!-- ══════════════ ABOUT ══════════════ -->
 <div class="page" id="pg-about">
-<<<<<<< HEAD
     <div class="page-hero">
         <img src="https://api2.kojaro.com/media/2023-4-df32b555-bea8-4630-b2ae-3c527a70e11f-67c46114c1067c5ba7683b82?w=1680&q=80" alt="About" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.2)">
         <div class="page-hero-content">
@@ -1311,112 +709,10 @@
         </div>
         <div class="footer-bottom"><p>© 2025 Ārtisān Persia. All rights reserved.</p></div>
     </footer>
-=======
-  <div class="page-hero">
-    <img src="https://api2.kojaro.com/media/2023-4-df32b555-bea8-4630-b2ae-3c527a70e11f-67c46114c1067c5ba7683b82?w=1680&q=80" alt="About" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.2)">
-    <div class="page-hero-content">
-      <h2>Our Story</h2>
-      <p>Bridging ancient craft with the modern world</p>
-    </div>
-  </div>
-
-  <div class="stats-banner">
-    <div class="stat-item"><span class="num">2,400+</span><span class="lbl">Products Listed</span></div>
-    <div class="stat-item"><span class="num">340</span><span class="lbl">Verified Artisans</span></div>
-    <div class="stat-item"><span class="num">68</span><span class="lbl">Countries Served</span></div>
-    <div class="stat-item"><span class="num">$4.2M</span><span class="lbl">Paid to Artisans</span></div>
-  </div>
-
-  <div class="mission">
-    <div class="mission-img">
-      <img src="https://cdn.nody.ir/files/2021/11/09/nody--1636404252.jpg" alt="Artisan at work">
-    </div>
-    <div class="mission-text">
-      <div class="eyebrow">Who We Are</div>
-      <h2>A Bridge Between Ancient<br>Hands & Modern Homes</h2>
-      <p>Ārtisān Persia was founded to give master craftspeople in Iran a global stage. We connect buyers worldwide with artisans in Isfahan, Tabriz, Shiraz, and beyond — ensuring every purchase is authentic, ethically sourced, and directly benefits the maker's family.</p>
-      <p>We believe cultural heritage is best preserved through commerce. By making Persian craftsmanship accessible globally, we help sustain traditions that are thousands of years old while empowering artisan families with fair, direct income — no middlemen, no compromises.</p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:1.5rem">
-        <button class="btn-primary" onclick="openModal('artist')">Join as Artisan</button>
-        <button class="btn-secondary" style="color:var(--gold-light);border-color:rgba(201,168,76,.4)" onclick="show('products')">Shop Now</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="team-section section-wrap">
-    <div class="section-header">
-      <div class="eyebrow">The People Behind It</div>
-      <h2>Our Core Team</h2>
-      <p>Passionate about Persian culture and global commerce</p>
-    </div>
-    <div class="team-grid">
-      <div class="team-card">
-        <div class="team-img"><img src="https://rasanika.com/storage/i/17263/3aFHU1jJpN1RJtgpFHAAB1nV/orig-900/image--rasanika.com.webp" alt="Sara"></div>
-        <div class="team-info"><h4>Sara Mohammadi</h4><div class="role">Co-founder & CEO</div><p>Born in Isfahan, raised in London. 15 years in international luxury e-commerce.</p></div>
-      </div>
-      <div class="team-card">
-        <div class="team-img"><img src="https://rasanika.com/storage/i/17263/3aFHU1jJpN1RJtgpFHAAB1nV/orig-900/image--rasanika.com.webp" alt="Dariush"></div>
-        <div class="team-info"><h4>Dariush Rezaei</h4><div class="role">Co-founder & CTO</div><p>Full-stack engineer and Web3 architect. Previously at Shopify and Binance.</p></div>
-      </div>
-      <div class="team-card">
-        <div class="team-img"><img src="https://rasanika.com/storage/i/17263/3aFHU1jJpN1RJtgpFHAAB1nV/orig-900/image--rasanika.com.webp" alt="Leila"></div>
-        <div class="team-info"><h4>Leila Karimi</h4><div class="role">Head of Artisan Relations</div><p>Art historian and cultural anthropologist. 12 years working with Iranian craftspeople.</p></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="cities-section section-wrap" style="background:#FDF9F2">
-    <div class="section-header">
-      <div class="eyebrow">Where We Source</div>
-      <h2>Cities of Craft</h2>
-      <p>The heartlands of Persian artistic tradition</p>
-    </div>
-    <div class="cities-grid">
-      <div class="city-card">
-        <img src="https://api2.kojaro.com/media/2016-11-f709a542-e33d-48e2-9d0d-a50056963272-67c460c8c1067c5ba75e5132?w=1680&q=80" alt="Isfahan">
-        <div class="city-label"><h4>Isfahan</h4><span>Ceramics · Marquetry · Miniatures</span></div>
-      </div>
-      <div class="city-card">
-        <img src="https://api2.kojaro.com/media/2023-9-fb841fda-4e7e-4bfd-817c-c7f2694e1958-67c46115c1067c5ba768656e?w=1080&q=80" alt="Tabriz">
-        <div class="city-label"><h4>Tabriz</h4><span>Hand-knotted Rugs · Leather</span></div>
-      </div>
-      <div class="city-card">
-        <img src="https://cdn.donya-e-eqtesad.com/thumbnail/rYolNzyvQtJV/QHn8O9nsSzT8qCU7RegsN6Pbb5v74eEtbKeSOh05RaaiylAk_XmP1Ut7TZyzEhnm/%D8%AC%D8%A7%D9%87%D8%A7%DB%8C+%D8%AF%DB%8C%D8%AF%D9%86%DB%8C+%D8%B4%DB%8C%D8%B1%D8%A7%D8%B2+%D8%AF%D8%B1+%D8%A8%D9%87%D8%A7%D8%B1+-+%D8%AA%D8%B5%D9%88%DB%8C%D8%B1+1.jpg" alt="Shiraz">
-        <div class="city-label"><h4>Shiraz</h4><span>Silver · Enamel · Inlay</span></div>
-      </div>
-      <div class="city-card">
-        <img src="https://api2.kojaro.com/media/2017-8-a25ea7db-da97-43ba-8e3e-533a5c4267d6-67c460ddc1067c5ba76162d7?w=1200&q=80" alt="Kashan">
-        <div class="city-label"><h4>Kashan</h4><span>Silk Rugs · Textiles · Velvet</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="press">
-    <div class="press-item"><p>Forbes</p><small>As seen in</small></div>
-    <div class="press-item"><p>Vogue</p><small>As seen in</small></div>
-    <div class="press-item"><p>CNN Travel</p><small>As seen in</small></div>
-    <div class="press-item"><p>Sotheby's</p><small>Partner</small></div>
-    <div class="press-item"><p>UNESCO</p><small>Affiliated</small></div>
-  </div>
-
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <h3>ĀRTISĀN PERSIA</h3>
-        <p>Connecting master Persian craftspeople with collectors and admirers around the world since 2024.</p>
-      </div>
-      <div class="footer-col"><h4>Explore</h4><ul><li><a onclick="show('products')">All Products</a></li><li><a onclick="show('auction')">Live Auctions</a></li><li><a onclick="show('about')">Our Story</a></li></ul></div>
-      <div class="footer-col"><h4>Support</h4><ul><li><a href="#">Shipping Info</a></li><li><a href="#">Returns</a></li><li><a href="#">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Sell</h4><ul><li><a onclick="openModal('artist')">Become an Artisan</a></li><li><a href="#">Guidelines</a></li></ul></div>
-    </div>
-    <div class="footer-bottom"><p>© 2025 Ārtisān Persia. All rights reserved.</p></div>
-  </footer>
->>>>>>> 5466f090e4f87e8f68b4ad7cb73cbc63603346bd
 </div>
 
 <!-- MODAL -->
 <div class="overlay" id="overlay" onclick="closeOuter(event)">
-<<<<<<< HEAD
     <div class="modal">
         <button class="modal-close" onclick="closeModal()">✕</button>
         <div class="modal-img">
@@ -1460,58 +756,12 @@
             <div class="modal-switch" id="modal-switch">No account? <a onclick="toggleSignup()">Create one free</a></div>
         </div>
     </div>
-=======
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <div class="modal-img">
-      <div class="modal-img-text">
-        <h3 id="modal-title">Welcome Back</h3>
-        <p id="modal-sub">Sign in to your account</p>
-      </div>
-    </div>
-    <div class="modal-body">
-      <div class="role-tabs">
-        <button class="role-tab active" id="tab-buyer" onclick="setRole('buyer')">🛍 Buyer / Collector</button>
-        <button class="role-tab" id="tab-artist" onclick="setRole('artist')">🎨 Artist / Seller</button>
-      </div>
-      <div class="social-login">
-        <button class="soc-btn" onclick="toast('Google login coming in the full version!')">🔴 Google</button>
-        <button class="soc-btn" onclick="toast('Apple login coming in the full version!')">⬛ Apple</button>
-        <button class="soc-btn" onclick="toast('Facebook login coming in the full version!')">🔵 Facebook</button>
-      </div>
-      <div class="form-divider">or continue with email</div>
-      <div id="signup-name" style="display:none" class="form-row">
-        <div class="fg"><label>First Name</label><input type="text" placeholder="Sara"></div>
-        <div class="fg"><label>Last Name</label><input type="text" placeholder="Mohammadi"></div>
-      </div>
-      <div class="fg"><label>Email Address</label><input type="email" placeholder="you@example.com"></div>
-      <div class="fg"><label>Password</label><input type="password" placeholder="••••••••"></div>
-      <div class="artist-fields" id="artist-fields">
-        <div class="fg"><label>Craft Specialty</label>
-          <select><option value="">Select your main craft...</option>
-            <option>Ceramics & Pottery</option><option>Hand-knotted Rugs & Kilims</option>
-            <option>Persian Miniature Painting</option><option>Jewelry & Silverwork</option>
-            <option>Khatam Marquetry</option><option>Embroidery & Textiles</option>
-            <option>Calligraphy & Paper Art</option><option>Copperwork & Enamel</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <div class="fg"><label>City</label><input type="text" placeholder="e.g. Isfahan"></div>
-          <div class="fg"><label>Years Active</label><input type="number" placeholder="e.g. 12"></div>
-        </div>
-      </div>
-      <button class="btn-form" id="form-btn" onclick="toast('Welcome to Ārtisān Persia! Redirecting...')">Sign In</button>
-      <div class="modal-switch" id="modal-switch">No account? <a onclick="toggleSignup()">Create one free</a></div>
-    </div>
-  </div>
->>>>>>> 5466f090e4f87e8f68b4ad7cb73cbc63603346bd
 </div>
 
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
 
 <script>
-<<<<<<< HEAD
     // ── DATA ──
     const products = [
         {id:1,name:"Isfahan Blue Vase",artist:"Maryam Karimi",price:185,badge:"new",cat:"Ceramics",img:"https://noormehrcrafts.ir/wp-content/uploads/2021/10/%D9%85%DB%8C%D9%86%D8%A7%DA%A9%D8%A7%D8%B1%DB%8C.jpg"},
@@ -1545,41 +795,6 @@
         const bdg = p.badge ? `<span class="prod-badge badge-${p.badge}">${p.badge}</span>` : '';
         const orig = p.badge==='sale' ? `<span class="orig">$${Math.round(p.price*1.2)}</span>` : '';
         return `<div class="prod-card">
-=======
-  // ── DATA ──
-  const products = [
-    {id:1,name:"Isfahan Blue Vase",artist:"Maryam Karimi",price:185,badge:"new",cat:"Ceramics",img:"https://noormehrcrafts.ir/wp-content/uploads/2021/10/%D9%85%DB%8C%D9%86%D8%A7%DA%A9%D8%A7%D8%B1%DB%8C.jpg"},
-    {id:2,name:"Tabriz Wool Kilim 2×3m",artist:"Hassan Rezaei",price:640,badge:"rare",cat:"Rugs",img:"https://www.shahkarmashhad.com/Files/content/Media/1188-20221231164100682.jpg"},
-    {id:3,name:"Royal Court Miniature",artist:"Fatemeh Ahmadi",price:320,badge:"",cat:"Miniatures",img:"https://marsin.ir/wp-content/uploads/2020/12/%D9%86%D9%82%D8%A7%D8%B4%DB%8C-%D9%85%DB%8C%D9%86%DB%8C%D8%A7%D8%AA%D9%88%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%D9%88-%D8%AA%D8%B5%D8%A7%D9%88%DB%8C%D8%B1%DB%8C-%D8%A7%D8%B2-%D8%B4%D8%A7%D9%87%DA%A9%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D9%86%D9%82%D8%A7%D8%B4%DB%8C-%D9%85%DB%8C%D9%86%DB%8C%D8%A7%D8%AA%D9%88%D8%B1-1.jpg"},
-    {id:4,name:"Turquoise Silver Ring",artist:"Ali Nazari",price:95,badge:"new",cat:"Jewelry",img:"https://saatchico.com/mag/wp-content/uploads/2022/09/133_2_summer_jewels_july_2021_rare_qajar_enamel_and_gem_set_pendant__rago_auction-1024x1024.jpg"},
-    {id:5,name:"Khatam Inlay Chess Set",artist:"Reza Mousavi",price:430,badge:"rare",cat:"Marquetry",img:"https://sanaiedastie.com/wp-content/uploads/2025/08/Khatam-Kari4_11zon.webp"},
-    {id:6,name:"Silk Tabriz Rug 3×5m",artist:"Zahra Hosseini",price:1200,badge:"rare",cat:"Rugs",img:"https://www.shahkarmashhad.com/Files/content/Media/1188-20221231164148178.jpg"},
-    {id:7,name:"Copper Enamel Plate Set",artist:"Nasrin Shirazi",price:210,badge:"sale",cat:"Ceramics",img:"https://yazdmemento.com/wp-content/uploads/2024/03/Ceramic-01.png"},
-    {id:8,name:"Sufi Calligraphy Panel",artist:"Omid Tehrani",price:155,badge:"new",cat:"Miniatures",img:"https://marsin.ir/wp-content/uploads/2020/12/%D9%86%D9%82%D8%A7%D8%B4%DB%8C-%D9%85%DB%8C%D9%86%DB%8C%D8%A7%D8%AA%D9%88%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%D9%88-%D8%AA%D8%B5%D8%A7%D9%88%DB%8C%D8%B1%DB%8C-%D8%A7%D8%B2-%D8%B4%D8%A7%D9%87%DA%A9%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D9%86%D9%82%D8%A7%D8%B4%DB%8C-%D9%85%DB%8C%D9%86%DB%8C%D8%A7%D8%AA%D9%88%D8%B1-5.jpg"},
-    {id:9,name:"Hand-embroidered Silk Scarf",artist:"Leila Kashani",price:75,badge:"",cat:"Textiles",img:"https://api2.kojaro.com/media/2018-9-c660e7c0-a974-4c1e-a8be-b08382c23954-67c460f8c1067c5ba764af18?w=1200&q=80"},
-    {id:10,name:"Lapis Lazuli Pendant",artist:"Dariush Moradi",price:130,badge:"new",cat:"Jewelry",img:"https://haghanigold.com/wp-content/uploads/2023/10/image2-24.jpg"},
-    {id:11,name:"Hand-painted Tile Set (12pc)",artist:"Maryam Karimi",price:290,badge:"",cat:"Ceramics",img:"https://tehrangiftshop.com/wp-content/uploads/2021/12/600.720-1.jpg"},
-    {id:12,name:"Khatam Jewelry Box",artist:"Reza Mousavi",price:185,badge:"sale",cat:"Marquetry",img:"https://sanaiedastie.com/wp-content/uploads/2025/08/Khatam-Kari-1_2_11zon.webp"},
-  ];
-
-  const liveAuctions = [
-    {name:"19th-Century Tabriz Medallion Rug",origin:"Estate of Ali Mohammadi — Tabriz",bid:"$3,200",bids:14,timer:"02:18:44",img:"https://www.shahkarmashhad.com/Files/content/Media/1188-20221231164148178.jpg",cert:"Museum Grade"},
-    {name:"Qajar-Era Miniature Diptych",origin:"Authenticated — Tehran Museum Reference",bid:"$1,750",bids:9,timer:"05:42:11",img:"https://marsin.ir/wp-content/uploads/2020/12/%D9%86%D9%82%D8%A7%D8%B4%DB%8C-%D9%85%DB%8C%D9%86%DB%8C%D8%A7%D8%AA%D9%88%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%D9%88-%D8%AA%D8%B5%D8%A7%D9%88%DB%8C%D8%B1%DB%8C-%D8%A7%D8%B2-%D8%B4%D8%A7%D9%87%DA%A9%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D9%86%D9%82%D8%A7%D8%B4%DB%8C-%D9%85%DB%8C%D9%86%DB%8C%D8%A7%D8%AA%D9%88%D8%B1-5.jpg",cert:"Certified Antique"},
-    {name:"Ustad Reza Mousavi — Khatam Ceramics",origin:"Master Craftsman, Isfahan",bid:"$2,100",bids:21,timer:"01:03:27",img:"https://tehrangiftshop.com/wp-content/uploads/2021/12/600.720-1.jpg",cert:"Artist Signed"},
-    {name:"Isfahan Turquoise Vase Pair",origin:"Maryam Karimi Workshop, Isfahan",bid:"$890",bids:6,timer:"08:30:00",img:"https://marsin.ir/wp-content/uploads/2020/12/%D9%86%D9%82%D8%A7%D8%B4%DB%8C-%D9%85%DB%8C%D9%86%DB%8C%D8%A7%D8%AA%D9%88%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%D9%88-%D8%AA%D8%B5%D8%A7%D9%88%DB%8C%D8%B1%DB%8C-%D8%A7%D8%B2-%D8%B4%D8%A7%D9%87%DA%A9%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D9%86%D9%82%D8%A7%D8%B4%DB%8C-%D9%85%DB%8C%D9%86%DB%8C%D8%A7%D8%AA%D9%88%D8%B1-7.jpg",cert:"Handmade"},
-  ];
-
-  const upcomingAuctions = [
-    {name:"Safavid-Inspired Silk Rug — Kashan",origin:"Zahra Hosseini, Master Weaver",bid:"Est. $4,500–$6,000",bids:0,timer:"Starts in 2 days",img:"https://www.shahkarmashhad.com/Files/content/Media/1188-20221231164148178.jpg",cert:"Reserve Set"},
-    {name:"Copper Engraving — Shiraz School",origin:"Nasrin Shirazi, 3rd Generation",bid:"Est. $600–$900",bids:0,timer:"Starts in 4 days",img:"https://bazaremina.ir/wp-content/uploads/2024/01/urmia-handicrafts3.webp",cert:"Artist Verified"},
-  ];
-
-  // ── RENDER CARDS ──
-  function makeCard(p, home){
-    const bdg = p.badge ? `<span class="prod-badge badge-${p.badge}">${p.badge}</span>` : '';
-    const orig = p.badge==='sale' ? `<span class="orig">$${Math.round(p.price*1.2)}</span>` : '';
-    return `<div class="prod-card">
->>>>>>> 5466f090e4f87e8f68b4ad7cb73cbc63603346bd
     <div class="prod-img-wrap">
       <img src="${p.img}" alt="${p.name}" loading="lazy">
       ${bdg}
@@ -1594,7 +809,6 @@
       </div>
     </div>
   </div>`;
-<<<<<<< HEAD
     }
 
     function makeAucCard(a, live){
@@ -1603,16 +817,6 @@
             ? `<button class="btn-bid" onclick="openModal('buyer')">Place a Bid</button>`
             : `<button class="btn-bid" style="opacity:.6;background:#888;cursor:default">Bidding Not Open Yet</button>`;
         return `<div class="auc-card">
-=======
-  }
-
-  function makeAucCard(a, live){
-    const liveTag = live ? `<div class="auc-live"><span>●</span> Live</div>` : '';
-    const bidBtn = live
-      ? `<button class="btn-bid" onclick="openModal('buyer')">Place a Bid</button>`
-      : `<button class="btn-bid" style="opacity:.6;background:#888;cursor:default">Bidding Not Open Yet</button>`;
-    return `<div class="auc-card">
->>>>>>> 5466f090e4f87e8f68b4ad7cb73cbc63603346bd
     <div class="auc-img">
       <img src="${a.img}" alt="${a.name}" loading="lazy">
       ${liveTag}
@@ -1632,7 +836,6 @@
       ${bidBtn}
     </div>
   </div>`;
-<<<<<<< HEAD
     }
 
     document.getElementById('home-products').innerHTML = products.slice(0,8).map(p=>makeCard(p,true)).join('');
@@ -1703,78 +906,6 @@
         });
     }
     setInterval(tick,1000);
-=======
-  }
-
-  document.getElementById('home-products').innerHTML = products.slice(0,8).map(p=>makeCard(p,true)).join('');
-  document.getElementById('all-products').innerHTML = products.map(p=>makeCard(p,false)).join('');
-  document.getElementById('live-auctions').innerHTML = liveAuctions.map(a=>makeAucCard(a,true)).join('');
-  document.getElementById('upcoming-auctions').innerHTML = upcomingAuctions.map(a=>makeAucCard(a,false)).join('');
-
-  // ── NAVIGATION ──
-  let cartCount = 0;
-  function show(page){
-    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-    document.getElementById('pg-'+page).classList.add('active');
-    document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
-    document.getElementById('nav-'+page).classList.add('active');
-    window.scrollTo({top:0,behavior:'smooth'});
-  }
-
-  // ── MODAL ──
-  let isSignup=false, currentRole='buyer';
-  function openModal(role){
-    currentRole = role||'buyer';
-    setRole(currentRole);
-    document.getElementById('overlay').classList.add('open');
-  }
-  function closeModal(){document.getElementById('overlay').classList.remove('open')}
-  function closeOuter(e){if(e.target===document.getElementById('overlay'))closeModal()}
-  function setRole(r){
-    currentRole=r;
-    document.getElementById('tab-buyer').classList.toggle('active',r==='buyer');
-    document.getElementById('tab-artist').classList.toggle('active',r==='artist');
-    document.getElementById('artist-fields').classList.toggle('show',r==='artist');
-    document.getElementById('modal-title').textContent = r==='artist' ? 'Sell Your Craft' : (isSignup?'Join Ārtisān Persia':'Welcome Back');
-    document.getElementById('modal-sub').textContent = r==='artist' ? 'Register as a verified artisan' : (isSignup?'Create your free account':'Sign in to continue');
-  }
-  function toggleSignup(){
-    isSignup=!isSignup;
-    document.getElementById('signup-name').style.display=isSignup?'grid':'none';
-    document.getElementById('form-btn').textContent=isSignup?'Create Account':'Sign In';
-    document.getElementById('modal-switch').innerHTML=isSignup?'Already have an account? <a onclick="toggleSignup()">Sign in</a>':'No account? <a onclick="toggleSignup()">Create one free</a>';
-    setRole(currentRole);
-  }
-
-  // ── CART ──
-  function addCart(name){
-    cartCount++;
-    document.getElementById('cart-count').textContent=cartCount;
-    toast(`"${name}" added to cart`);
-  }
-
-  // ── TOAST ──
-  function toast(msg){
-    const el=document.getElementById('toast');
-    el.textContent=msg;
-    el.classList.add('show');
-    setTimeout(()=>el.classList.remove('show'),3000);
-  }
-
-  // ── AUCTION TIMERS ──
-  function pad(n){return String(n).padStart(2,'0')}
-  function tick(){
-    document.querySelectorAll('.timer-val').forEach(el=>{
-      const txt=el.textContent;
-      const m=txt.match(/^(\d+):(\d+):(\d+)$/);
-      if(!m)return;
-      let[,h,min,sec]=m.map(Number);
-      if(sec>0)sec--;else if(min>0){min--;sec=59}else if(h>0){h--;min=59;sec=59}
-      el.textContent=`${pad(h)}:${pad(min)}:${pad(sec)}`;
-    });
-  }
-  setInterval(tick,1000);
->>>>>>> 5466f090e4f87e8f68b4ad7cb73cbc63603346bd
 </script>
 </body>
 </html>
